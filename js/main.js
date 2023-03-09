@@ -58,7 +58,8 @@ const devolver_productos=()=>{
 const see_cart=()=>{
     //Muestra el carrito de compras
     let message="Carrito:\n";
-    carrito.forEach(products=>{
+    let carrito = JSON.parse(localStorage.getItem("carrito"));
+    carrito.forEach(products => {
         message+=`
             marca: ${products.marca}
             modelo: ${products.modelo}
@@ -66,7 +67,7 @@ const see_cart=()=>{
             precio: $${products.precio*products.cantidad}
         `
         alert(message);
-    })
+    });
     
     let finish=parseInt(prompt("1--> Comprar todo\n2--> Seguir comprando\n3--> Vaciar Carrito"));
     terminar_compra(finish);
@@ -81,16 +82,16 @@ const terminar_compra=(finish)=>{
         let confirmarCompra=parseInt(prompt(`Su monto total a pagar es de $${montoTotal}\n1-->Pagar\n0-->Cancelar`));
         if(confirmarCompra===1){
             alert("Gracias por su compra!")
-            carrito=[]; //Se reinicia el carrito
+            localStorage.clear("carrito"); //Se reinicia el carrito
         }else{
             devolver_productos();
             alert("Compra cancelada");
-            carrito=[]; //Se reinicia el carrito
+            localStorage.clear("carrito"); //Se reinicia el carrito
         }
     }else if(finish===3){
         alert("Sus productos elejidos han sido removidos");
         devolver_productos();
-        carrito=[];
+        localStorage.clear("carrito");
     }
 }
 
@@ -159,15 +160,16 @@ while (option !== '4') { // Ejecutar el bucle hasta que el usuario seleccione la
                 }else{
                     alert(`No hay stock disponible para esa cantidad\nQuedan: ${encontre.stock} pares`);
                 }
-                
+                localStorage.setItem("carrito",JSON.stringify(carrito));
             }
             break;
         case '3':
-            if(carrito.some(elemento => true)){
+            if(localStorage.key("carrito")!=null){
                 see_cart();
             }else{
                 alert("El carrito esta vacio!");
             }
+
             break;
         case '4':
             break;

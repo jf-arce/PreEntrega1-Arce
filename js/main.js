@@ -1,27 +1,34 @@
-const zapatillas=[
-    {marca:"nike",modelo:"airforce", precio:50000,stock:30},
-    {marca:"nike",modelo:"jordan", precio:60000,stock:30},
-    {marca:"nike",modelo:"airmax", precio:38000,stock:30},
-    {marca:"nike",modelo:"vapormax", precio:40000,stock:30},
-    {marca:"nike",modelo:"uptempo", precio:45000,stock:30},
-   
-    {marca:"adidas",modelo:"galaxy6", precio:35000,stock:25},
-    {marca:"adidas",modelo:"superstar",precio:25000,stock:25},
-    {marca:"adidas",modelo:"forum",precio:30000,stock:25},
-    {marca:"adidas",modelo:"stansmith",precio:40000,stock:25},
+function Zapatilla(marca,modelo,precio,stock){
+    this.marca=marca;
+    this.modelo=modelo;
+    this.precio=precio;
+    this.stock=stock;
+}
 
-    {marca:"vans",modelo:"oldskool",precio:35000,stock:40},
-    {marca:"vans",modelo:"era",precio:30000,stock:40},
-    {marca:"vans",modelo:"sk8high",precio:38000,stock:40},
+const zapatillas = [
+    new Zapatilla("nike","airforce",50000,30),
+    new Zapatilla("nike","jordan",60000,30),
+    new Zapatilla("nike","airmax",38000,30),
+    new Zapatilla("nike","vapormax",40000,30),
+    new Zapatilla("nike","uptempo",45000,30),
 
-    {marca:"converse",modelo:"allstar", precio:35000,stock:50},
-    {marca:"converse",modelo:"courtlandt",precio:30000,stock:50},
-    {marca:"converse",modelo:"chuck taylor all star",precio:38000,stock:50},
+    new Zapatilla("adidas","galaxy6",35000,25),
+    new Zapatilla("adidas","superstar",25000,25),
+    new Zapatilla("adidas","forum",30000,25),
+    new Zapatilla("adidas","stansmith",40000,25),
+    
+    new Zapatilla("vans","oldskool",35000,40),
+    new Zapatilla("vans","era",30000,40),
+    new Zapatilla("vans","sk8high",38000,40),
 
-    {marca:"dc",modelo:"midway", precio:40000,stock:20},
-    {marca:"dc",modelo:"manual sd", precio:38000,stock:20},
-    {marca:"dc",modelo:"kalisvulc", precio:35000,stock:20},
-];
+    new Zapatilla("converse","allstar",35000,50),
+    new Zapatilla("converse","courtlandt",30000,50),
+    new Zapatilla("converse","chuck taylor all star",38000,50),
+
+    new Zapatilla("dc","midway",40000,20),
+    new Zapatilla("dc","manual sd",38000,20),
+    new Zapatilla("dc","kalisvulc",35000,20),
+  ];
 
 let carrito=[];
 

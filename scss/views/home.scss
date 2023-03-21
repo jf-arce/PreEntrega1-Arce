@@ -1,10 +1,35 @@
 #hero{
-    background-image: url(../../assets/images/hero1.jpg);
+    background-image: url(../../assets/images/pared-urbana.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
     .hero__title{
         font-family: blowbrush;
-        font-size: 5.5em;
+        font-size: 7em;
+        padding: 100px 50px;
+        color: black;
     }
 }
+
+/***CARRUSEL DE PRODUCTOS DESTACADOS***/
+
+.carousel {
+    margin-top: 20px;
+  }
+  
+  .carousel-item {
+    text-align: center;
+  }
+  
+  .carousel-item img {
+    border-radius: 5px;
+    width: 50%;
+    height: auto;
+  }
+
+  

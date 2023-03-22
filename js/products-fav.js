@@ -16,7 +16,7 @@ zapatillas.forEach(item => {
             <h5>$${item.precio}</h5>
         </div>
         <a class="card-link" href="./pages/shop.html">
-            <button type="button" class="producto_btn">Ver Porducto</button>
+            <button type="button" class="producto_btn">Ver Producto</button>
         </a>
     </div>
 `

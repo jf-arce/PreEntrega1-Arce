@@ -58,6 +58,19 @@ const calcular_total=()=>{
     total_pagar.textContent=totalCarrito;
 }
 
+//verificar stock
+const verificar_stock =()=>{
+    for (let i = 0; i < cart.length; i++) {
+
+        const prod_stock=zapatillas.find(producto=>producto.modelo===cart[i].nombre.substring(5));
+
+        if(prod_stock.stock<cart[i].cantidad){
+            alert(`No quedan mas ${cart[i].nombre}, Stock insuficiente!`);
+            cart[i].cantidad--;
+        }
+    }
+}
+
 /***************************** EVENTOS DEL DOM *************************************************/
 
 //verifica si hay productos en el localStorage del carrito y devuelve el carrito con los productos o vacio.
@@ -71,13 +84,13 @@ producto_container.addEventListener('click',item =>{
     if(item.target.classList.contains("producto_btn")){
         //recuperamos el producto
         const producto = item.target.parentElement;
+        //Verificar si queda stock del producto
         const infoProduct = {
             cantidad:1,
             imagen: producto.querySelector('.producto_img').src,
             nombre: producto.querySelector('.producto_nombre').textContent,
             precio: producto.querySelector('.producto_precio').textContent,
         }
-
         //Si el producto elegido ya existe entonces aumenta la cantidad, de lo contrario se pushea normal
         const existe = cart.some(producto=> producto.nombre === infoProduct.nombre);
         if(existe){
@@ -89,6 +102,7 @@ producto_container.addEventListener('click',item =>{
             cart.push(infoProduct);
             localStorage.setItem('cart',JSON.stringify(cart));
         }
+        verificar_stock();
         //agregamos el producto al carrito en el DOM
         agregarHtml();
         //Da la cantidad de productos que hay en el carrito
@@ -107,7 +121,6 @@ listaCarrito.addEventListener("click",item=>{
         const nombre = producto.querySelector('h3').textContent;
         //Se guardan los productos que no tienen el nombre del producto que queremos eliminar
         const newlist = cart.filter(product => product.nombre !== nombre);
-        console.log(newlist);
         //igualamaos el carrito al nuevo arreglo sin el producto eliminado
         cart=newlist;
         localStorage.setItem('cart',JSON.stringify(cart));
@@ -126,3 +139,4 @@ btn_vaciarCarrito.addEventListener('click',()=>{
     contar_productos();
     calcular_total();
 })
+

@@ -7,11 +7,11 @@ function Zapatilla(marca,modelo,precio,stock,imagen=""){
 }
 
 const zapatillas = [
-    new Zapatilla("nike","airforce",50000,30,'../assets/images/air-force-1-arg.jpg'),
-    new Zapatilla("nike","jordan",60000,30,'../assets/images/jordan-air-1-retro.jpg'),
-    new Zapatilla("nike","airmax",38000,30,'../assets/images/airmax-270.jpg'),
-    new Zapatilla("nike","vapormax",40000,30,'../assets/images/vapor-max-flyknit.jpg'),
-    new Zapatilla("nike","uptempo",45000,30,'../assets/images/nike-uptempo.jpg'),
+    new Zapatilla("nike","airforce",50000,5,'../assets/images/air-force-1-arg.jpg'),
+    new Zapatilla("nike","jordan",60000,7,'../assets/images/jordan-air-1-retro.jpg'),
+    new Zapatilla("nike","airmax",38000,4,'../assets/images/airmax-270.jpg'),
+    new Zapatilla("nike","vapormax",40000,6,'../assets/images/vapor-max-flyknit.jpg'),
+    new Zapatilla("nike","uptempo",45000,5,'../assets/images/nike-uptempo.jpg'),
 
     new Zapatilla("adidas","galaxy6",35000,25,'../assets/images/jordan-air-1-retro.jpg'),
     new Zapatilla("adidas","superstar",25000,25,'../assets/images/jordan-air-1-retro.jpg'),

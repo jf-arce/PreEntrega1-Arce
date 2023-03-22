@@ -1,5 +1,4 @@
 //Declaraciones
-const producto_container = document.getElementById('producto_container');
 const cart__icon = document.getElementById('cart__icon');
 const cart__modal= document.getElementById('cart__modal');
 const btnCerrar = document.getElementsByClassName('cerrar')[0];
@@ -8,19 +7,6 @@ const contadorProducto=document.getElementById('contador-productos');
 const producto_eliminar = document.getElementById('producto_eliminar');
 const total_pagar= document.getElementById('total-pagar');
 const btn_vaciarCarrito= document.getElementById('btn-vaciarCarrito');
-
-//**************** Creacion de los productos en el dom segun el stock que haya *********************
-zapatillas.forEach(item => {
-    const div = document.createElement('div');
-    div.classList.add('producto');
-    div.innerHTML=`
-    <img class="producto_img" src="${item.imagen}"></img>
-    <h3 class="producto_nombre">${item.marca} ${item.modelo}</h3>
-    <p class="producto_precio">$${item.precio}</p>
-    <button type="button" class="producto_btn">Añadir al carrito</button>
-`
-    producto_container.appendChild(div);
-});
 
 /******************** Animaciones de abrir y cerrar el carrito *******************************/
 cart__icon.addEventListener('click',()=>{
@@ -46,7 +32,7 @@ const agregarHtml=()=>{
         const li = document.createElement('li');
         li.classList.add('producto');
         li.innerHTML=`
-        <img class="producto_img" src="${product.imagen}"></img>
+        <img class="producto_img--cart" src="${product.imagen}"></img>
         <h3 class="producto_nombre">${product.nombre}</h3>
         <p class="producto_precio">${product.precio}</p>
         <p class="producto_cantidad">Cantidad: ${product.cantidad}</p
@@ -80,20 +66,20 @@ agregarHtml();
 contar_productos();
 calcular_total();
 
+//Producto_container esta declarada en stock.js. 
 producto_container.addEventListener('click',item =>{
-    console.log(item.target.classList.contains("producto_btn"));
     if(item.target.classList.contains("producto_btn")){
         //recuperamos el producto
         const producto = item.target.parentElement;
         const infoProduct = {
             cantidad:1,
+            imagen: producto.querySelector('.producto_img').src,
             nombre: producto.querySelector('.producto_nombre').textContent,
             precio: producto.querySelector('.producto_precio').textContent,
         }
-        
+
         //Si el producto elegido ya existe entonces aumenta la cantidad, de lo contrario se pushea normal
         const existe = cart.some(producto=> producto.nombre === infoProduct.nombre);
-        console.log(existe);
         if(existe){
             const index = cart.findIndex(producto=> producto.nombre === infoProduct.nombre);
             cart[index].cantidad++;

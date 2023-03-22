@@ -1,35 +1,40 @@
 #hero{
-    background-image: url(../../assets/images/pared-urbana.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-attachment: fixed;
+  background-image: url(../../assets/images/luces-neon-wall.jpg);
+  background-size: cover;
+  background-position: center top 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
     .hero__title{
         font-family: blowbrush;
         font-size: 7em;
         padding: 100px 50px;
-        color: black;
+        color: rgb(224, 224, 224);
+    }
+    .hero__subtitle{
+        font-family: blowbrush;
+        font-size: 2em;
+        color: rgb(224, 224, 224);
     }
 }
 
-/***CARRUSEL DE PRODUCTOS DESTACADOS***/
+#propaganda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  img{
+    width: 90vw;
+    padding: 20px 100px;
+  }
+  
+}
 
-.carousel {
-    margin-top: 20px;
-  }
-  
-  .carousel-item {
-    text-align: center;
-  }
-  
-  .carousel-item img {
-    border-radius: 5px;
-    width: 50%;
-    height: auto;
-  }
-
-  
+.propagandas-destacados{
+  background-image: url(../../assets/images/paredNeon.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}

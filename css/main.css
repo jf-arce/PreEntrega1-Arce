@@ -8,6 +8,76 @@
   font-family: blowbrush;
   src: url(../../assets/fonts/blowbrush.ttf); }
 
+#destacados {
+  position: relative;
+  min-height: 70vh;
+  background: transparent;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  width: 90%;
+  margin: 0 auto; }
+  #destacados h2 {
+    font-family: blowbrush;
+    font-size: 3em;
+    font-weight: bold;
+    padding: 30px;
+    margin: 0; }
+
+.swiper-container {
+  width: 100%;
+  height: 100%; }
+
+.swiper-slide {
+  background: #1A1E17;
+  color: #fff;
+  position: relative;
+  text-align: start;
+  font-size: 18px;
+  border-radius: 10px;
+  text-align: start;
+  box-shadow: 0px 4px 4px rgba(196, 196, 196, 0.25);
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.swiper-slide img {
+  padding: 20px;
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px; }
+
+.card-description {
+  padding: 1rem 1rem; }
+
+.card-title, .card-precio {
+  margin-bottom: .5rem;
+  text-align: center;
+  margin: 10px;
+  text-transform: capitalize; }
+
+.card-link {
+  text-align: center; }
+
+.card-link {
+  text-decoration: none;
+  color: white; }
+
+.swiper-button-next {
+  right: 0px !important; }
+
+.swiper-button-prev {
+  left: 0px !important; }
+
 /************* MENU RESPONSIVE DESKTOP FIRST *************/
 /** Menu de escritorio **/
 header {
@@ -20,7 +90,8 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 999; }
+  z-index: 999;
+  color: #ffffff; }
   header .header__nav {
     list-style-type: none;
     flex: 1;
@@ -37,7 +108,7 @@ header {
           font-family: 'Montserrat', sans-serif;
           text-decoration: none;
           font-weight: bold;
-          color: #000; }
+          color: #ffffff; }
           header .header__nav .nav__list .list__item .item__link:hover {
             text-decoration: underline; }
 
@@ -99,7 +170,7 @@ header {
     background-color: white;
     margin: 10% auto;
     position: absolute;
-    top: 0;
+    top: -100px;
     left: 0;
     right: 0;
     padding: 20px;
@@ -205,36 +276,129 @@ header {
   .bi.bi-trash:hover {
     color: #b41717; }
 
-#hero {
-  background-image: url(../../assets/images/pared-urbana.jpg);
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
+/********FOOTER*********/
+footer {
+  background-color: #000000;
+  /*font-family: 'Karla', sans-serif;*/
+  font-family: 'Monument Extended', sans-serif;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 300px auto;
+  grid-template-areas: "logo-redes mail-telefono" "copyright copyright"; }
+
+.logo-redes {
+  grid-area: logo-redes;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-attachment: fixed; }
+  text-align: center; }
+
+.logo-custom a img {
+  width: 100%;
+  height: 200px; }
+
+.logo-redes__redes a {
+  color: #ffffff;
+  padding: 0px 8px; }
+  .logo-redes__redes a:hover {
+    color: #6e6e6e; }
+
+/**************/
+.mail-telefono {
+  grid-area: mail-telefono;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  padding: 30px; }
+
+.mail-telefono__title {
+  font-size: 1.2em;
+  margin-bottom: 20px; }
+
+.icon-text {
+  font-size: 0.9em;
+  padding-left: 10px;
+  margin-bottom: 12px; }
+
+.mail-telefono__contact {
+  display: flex;
+  flex-direction: row; }
+
+.copyright {
+  background-color: #000000;
+  grid-area: copyright;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 0.5px solid #464646;
+  margin: 0px 20px; }
+  .copyright a:hover {
+    color: #c6c6c6;
+    padding: 10px;
+    font-size: 0.6em; }
+
+.copyright__texto {
+  color: #464646;
+  padding: 10px;
+  font-size: 0.6em;
+  text-decoration: none; }
+
+/******************* Media Queries *******************/
+@media screen and (max-width: 768px) {
+  .mail-telefono {
+    padding: 0px; }
+  footer {
+    background-color: #000000;
+    /*font-family: 'Karla', sans-serif;*/
+    font-family: 'Monument Extended', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 180px 200px auto;
+    grid-template-areas: "logo-redes" "mail-telefono" "copyright"; }
+  .copyright {
+    flex-direction: column; }
+  .mail-telefono__title {
+    font-size: 1em; } }
+
+#hero {
+  background-image: url(../../assets/images/luces-neon-wall.jpg);
+  background-size: cover;
+  background-position: center top 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
   #hero .hero__title {
     font-family: blowbrush;
     font-size: 7em;
     padding: 100px 50px;
-    color: black; }
+    color: #e0e0e0; }
+  #hero .hero__subtitle {
+    font-family: blowbrush;
+    font-size: 2em;
+    color: #e0e0e0; }
 
-/***CARRUSEL DE PRODUCTOS DESTACADOS***/
-.carousel {
-  margin-top: 20px; }
+#propaganda {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  #propaganda img {
+    width: 90vw;
+    padding: 20px 100px; }
 
-.carousel-item {
-  text-align: center; }
-
-.carousel-item img {
-  border-radius: 5px;
-  width: 50%;
-  height: auto; }
+.propagandas-destacados {
+  background-image: url(../../assets/images/paredNeon.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; }
 
 body {
-  background-color: #DFDFDF; }
+  background-color: #000000; }
 
 #compras {
   display: flex;
@@ -242,7 +406,7 @@ body {
   align-items: center; }
 
 #producto_container {
-  background-color: #8e8e8e;
+  background-color: #646464;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -270,19 +434,26 @@ body {
       max-width: 90%;
       margin: 20px;
       border-radius: 0.2rem; }
-    #producto_container .producto .producto_btn {
-      position: relative;
-      display: inline-block;
-      width: 15rem;
-      height: 3rem;
-      border: none;
-      border-radius: 0.4rem;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #14d3aa;
-      color: #1A1E17;
-      margin-bottom: 20px; }
-      #producto_container .producto .producto_btn:hover {
-        background-color: #10ad8b; }
+
+.producto_img--cart {
+  height: 50px;
+  max-width: 100%;
+  margin: 20px;
+  border-radius: 0.2rem; }
+
+.producto_btn {
+  position: relative;
+  display: inline-block;
+  width: 15rem;
+  height: 3rem;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #14d3aa;
+  color: #1A1E17;
+  margin-bottom: 20px; }
+  .producto_btn:hover {
+    background-color: #10ad8b; }

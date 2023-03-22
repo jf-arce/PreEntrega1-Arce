@@ -1,11 +1,12 @@
 //base
-@import "./base/colors.scss";
 @import "./base/reset.scss";
+@import "./base/colors.scss";
 @import "./base/typo.scss";
 
 //components
 
 @import "./components/cards.scss";
+@import "./components/carrousel-fav.scss";
 
 
 //layout 

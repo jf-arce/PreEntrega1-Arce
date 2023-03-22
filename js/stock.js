@@ -7,11 +7,11 @@ function Zapatilla(marca,modelo,precio,stock,imagen=""){
 }
 
 const zapatillas = [
-    new Zapatilla("nike","airforce",50000,30,'../assets/images/jordan-air-1-retro.jpg'),
+    new Zapatilla("nike","airforce",50000,30,'../assets/images/air-force-1-arg.jpg'),
     new Zapatilla("nike","jordan",60000,30,'../assets/images/jordan-air-1-retro.jpg'),
-    new Zapatilla("nike","airmax",38000,30,'../assets/images/jordan-air-1-retro.jpg'),
-    new Zapatilla("nike","vapormax",40000,30,'../assets/images/jordan-air-1-retro.jpg'),
-    new Zapatilla("nike","uptempo",45000,30,'../assets/images/jordan-air-1-retro.jpg'),
+    new Zapatilla("nike","airmax",38000,30,'../assets/images/airmax-270.jpg'),
+    new Zapatilla("nike","vapormax",40000,30,'../assets/images/vapor-max-flyknit.jpg'),
+    new Zapatilla("nike","uptempo",45000,30,'../assets/images/nike-uptempo.jpg'),
 
     new Zapatilla("adidas","galaxy6",35000,25,'../assets/images/jordan-air-1-retro.jpg'),
     new Zapatilla("adidas","superstar",25000,25,'../assets/images/jordan-air-1-retro.jpg'),
@@ -30,3 +30,19 @@ const zapatillas = [
     new Zapatilla("dc","manual sd",38000,20),
     new Zapatilla("dc","kalisvulc",35000,20),
 ];
+
+const producto_container = document.getElementById('producto_container');
+
+//**************** Creacion de los productos en el dom de shop segun el stock que haya *********************
+zapatillas.forEach(item => {
+    const div = document.createElement('div');
+    div.classList.add('producto');
+    div.innerHTML=`
+    <img class="producto_img" src="${item.imagen}"></img>
+    <h3 class="producto_nombre">${item.marca} ${item.modelo}</h3>
+    <p class="producto_precio">$${item.precio}</p>
+    <button type="button" class="producto_btn">Añadir al carrito</button>
+`
+    producto_container.appendChild(div);
+});
+

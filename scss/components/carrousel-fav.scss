@@ -1,0 +1,76 @@
+#destacados{
+    position: relative;
+    min-height: 70vh;
+    background: transparent;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: rgb(224, 224, 224);
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    overflow-x: hidden;
+    width: 90%;
+    margin: 0 auto;
+
+    h2{
+        font-family: blowbrush;
+        font-size: 3em;
+        font-weight: bold;
+        padding: 30px;
+        margin: 0;
+    }
+}
+
+.swiper-container{
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide{
+    background: #1A1E17;
+    color: #fff;
+    position: relative;
+    text-align: start;
+    font-size: 18px;
+    border-radius: 10px;
+    text-align: start;
+    box-shadow: 0px 4px 4px rgba(196, 196, 196, 0.25);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    padding: 20px;
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-description{
+    padding:1rem 1rem;
+}
+.card-title,.card-precio{
+    margin-bottom: .5rem;
+    text-align: center;
+    margin: 10px;
+    text-transform: capitalize;
+}
+.card-link{
+   text-align: center;
+}
+.card-link{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+.swiper-button-next{
+    right: 0px !important;
+}
+.swiper-button-prev{
+    left: 0px !important;
+}

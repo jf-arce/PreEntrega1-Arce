@@ -1,14 +1,18 @@
 body{
-    background-color: #DFDFDF;
+    background-color: #000000;
 }
 #compras{
     display: flex;
     flex-direction: column;
     align-items: center;
+    // background-image: url(../../assets/images/paredNeon.jpg);
+    // background-position: center;
+    // background-size: cover;
+    // background-repeat: no-repeat;
 }
 
 #producto_container{
-    background-color: #8e8e8e;
+    background-color: #646464;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -23,7 +27,7 @@ body{
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
-        border-radius: 0.3rem;;
+        border-radius: 0.3rem;
         .producto_nombre{
             color: #DFDFDF;
             margin: 10px;
@@ -39,28 +43,34 @@ body{
             margin: 20px;
             border-radius: 0.2rem;
         }
-        .producto_btn{
-            position: relative;
-            display: inline-block;
-            width: 15rem;
-            height: 3rem;
-            border: none; 
-            border-radius: 0.4rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #14d3aa;
-            color:#1A1E17;
-            margin-bottom: 20px;
-            &:hover{
-                background-color: #10ad8b;
-            }
-        }
+        
     }
 }
 
-
+.producto_img--cart{
+    height: 50px;
+    max-width: 100%;
+    margin: 20px;
+    border-radius: 0.2rem;
+}
+.producto_btn{
+    position: relative;
+    display: inline-block;
+    width: 15rem;
+    height: 3rem;
+    border: none; 
+    border-radius: 0.4rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #14d3aa;
+    color:#1A1E17;
+    margin-bottom: 20px;
+    &:hover{
+        background-color: #10ad8b;
+    }
+}
 
 
 

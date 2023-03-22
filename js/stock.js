@@ -31,6 +31,15 @@ const zapatillas = [
     new Zapatilla("dc","kalisvulc",35000,20),
 ];
 
+const zapatillasDestacadas =[
+    new Zapatilla("nike","airforce",50000,5,'./assets/images/air-force-1-arg.jpg'),
+    new Zapatilla("nike","jordan",60000,7,'./assets/images/jordan-air-1-retro.jpg'),
+    new Zapatilla("nike","airmax",38000,4,'./assets/images/airmax-270.jpg'),
+    new Zapatilla("nike","vapormax",40000,6,'./assets/images/vapor-max-flyknit.jpg'),
+    new Zapatilla("nike","uptempo",45000,5,'./assets/images/nike-uptempo.jpg'),
+]
+
+
 const producto_container = document.getElementById('producto_container');
 
 //**************** Creacion de los productos en el dom de shop segun el stock que haya *********************

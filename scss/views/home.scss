@@ -1,5 +1,5 @@
 #hero{
-  background-image: url(../../assets/images/luces-neon-wall.jpg);
+  background-image: url(../assets/images/luces-neon-wall.jpg);
   background-size: cover;
   background-position: center top 20px;
   height: 100vh;
@@ -7,7 +7,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
     .hero__title{
         font-family: blowbrush;
         font-size: 7em;
@@ -61,7 +60,7 @@
 }
 
 .propagandas-destacados{
-  background-image: url(../../assets/images/paredNeon.jpg);
+  background-image: url(../assets/images/paredNeon.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

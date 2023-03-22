@@ -2,7 +2,7 @@
 
 const swiper_wrapper = document.querySelector('.swiper-wrapper');
 console.log(swiper_wrapper);
-zapatillas.forEach(item => {
+zapatillasDestacadas.forEach(item => {
     const div = document.createElement('div');
     div.classList.add('swiper-slide');
     div.classList.add('swiper-slide-active')

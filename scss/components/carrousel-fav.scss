@@ -27,7 +27,7 @@
     height: 100%;
 }
 .swiper-slide{
-    background: #1A1E17;
+    background-color: #1A1E17;
     color: #fff;
     position: relative;
     text-align: start;
@@ -48,7 +48,7 @@
 }
 
 .swiper-slide img {
-    padding: 20px;
+    //padding: 20px;
     display: block;
     width: 100%;
     height: 180px;
@@ -75,7 +75,9 @@
 }
 .swiper-button-next{
     right: 0px !important;
+    color: #fff;
 }
 .swiper-button-prev{
     left: 0px !important;
+    color: #fff;
 }

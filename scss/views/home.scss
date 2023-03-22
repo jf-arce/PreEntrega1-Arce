@@ -1,3 +1,4 @@
+/********************* HERO *********************/
 #hero{
   background-image: url(../assets/images/luces-neon-wall.jpg);
   background-size: cover;
@@ -19,17 +20,17 @@
         color: rgb(224, 224, 224);
     }
 }
-
+/*********************PROPAGANDA DESTACADA*********************/
 #propaganda{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 30px;
     .propaganda-container{
       padding: 30px 100px;
     }
   img{
-    width: 80vw;
+    width: 70vw;
     padding: 10px;
     border: 2px solid rgb(255, 255, 255);
     //box-shadow: inset 0 0 100px rgb(195, 0, 255), 8px 0px 100px rgb(195, 0, 255);
@@ -66,11 +67,61 @@
   background-attachment: fixed;
 }
 
+/********************* SEPARADOR DE SECCIONES *********************/
 .separador{
   width: 100%;
   height: 10px;
   background-color: white;
   border: 1px solid rgb(195, 0, 255);
   box-shadow: inset 0 0 5px rgb(195, 0, 255), 8px 0px 100px rgb(195, 0, 255);
-  
 }
+
+/************************ SECCION DE MARCAS ****************/
+
+#marcas{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(176,179,245,1) 0%, rgba(223,184,223,1) 100%);
+  .marcas__container{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    grid-template-rows: repeat(2,auto);
+    grid-template-areas: 
+    "img img img"
+    "img img img";
+    padding: 30px;
+    justify-items: center;
+    align-items: center;
+    .container__marca{
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.marca__img{
+  width: 100%;
+  grid-area: img;
+  &:hover{
+    animation: rodar 2s infinite ease;
+  }
+}
+.marca__img--white{
+  width: 100%;
+  filter: invert(100%);
+  grid-area: img;
+  &:hover{
+    animation: rodar 2s infinite ease;
+  }
+}
+
+@keyframes rodar {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+

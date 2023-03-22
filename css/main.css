@@ -34,7 +34,7 @@
   height: 100%; }
 
 .swiper-slide {
-  background: #1A1E17;
+  background-color: #1A1E17;
   color: #fff;
   position: relative;
   text-align: start;
@@ -52,7 +52,6 @@
     transition: transform 0.2s ease; }
 
 .swiper-slide img {
-  padding: 20px;
   display: block;
   width: 100%;
   height: 180px;
@@ -77,10 +76,26 @@
   color: white; }
 
 .swiper-button-next {
-  right: 0px !important; }
+  right: 0px !important;
+  color: #fff; }
 
 .swiper-button-prev {
-  left: 0px !important; }
+  left: 0px !important;
+  color: #fff; }
+
+.btn-1 {
+  width: 10%;
+  height: 5%;
+  background-color: black;
+  position: absolute;
+  left: 60rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px; }
+  .btn-1 .btn-1-link {
+    color: aliceblue;
+    text-decoration: none; }
 
 /************* MENU RESPONSIVE DESKTOP FIRST *************/
 /** Menu de escritorio **/
@@ -291,6 +306,7 @@ footer {
   grid-template-rows: 300px auto;
   grid-template-areas: "logo-redes mail-telefono" "copyright copyright"; }
 
+/********************* HERO *********************/
 #hero {
   background-image: url(../assets/images/luces-neon-wall.jpg);
   background-size: cover;
@@ -310,15 +326,16 @@ footer {
     font-size: 2em;
     color: #e0e0e0; }
 
+/*********************PROPAGANDA DESTACADA*********************/
 #propaganda {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px; }
+  margin-top: 30px; }
   #propaganda .propaganda-container {
     padding: 30px 100px; }
   #propaganda img {
-    width: 80vw;
+    width: 70vw;
     padding: 10px;
     border: 2px solid white;
     border-radius: 50px;
@@ -344,12 +361,50 @@ footer {
   background-position: center;
   background-attachment: fixed; }
 
+/********************* SEPARADOR DE SECCIONES *********************/
 .separador {
   width: 100%;
   height: 10px;
   background-color: white;
   border: 1px solid #c300ff;
   box-shadow: inset 0 0 5px #c300ff, 8px 0px 100px #c300ff; }
+
+/************************ SECCION DE MARCAS ****************/
+#marcas {
+  background: #020024;
+  background: linear-gradient(90deg, #020024 0%, #b0b3f5 0%, #dfb8df 100%); }
+  #marcas .marcas__container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "img img img" "img img img";
+    padding: 30px;
+    justify-items: center;
+    align-items: center; }
+    #marcas .marcas__container .container__marca {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+
+.marca__img {
+  width: 100%;
+  grid-area: img; }
+  .marca__img:hover {
+    animation: rodar 2s infinite ease; }
+
+.marca__img--white {
+  width: 100%;
+  filter: invert(100%);
+  grid-area: img; }
+  .marca__img--white:hover {
+    animation: rodar 2s infinite ease; }
+
+@keyframes rodar {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
 
 body {
   background-color: #000000; }

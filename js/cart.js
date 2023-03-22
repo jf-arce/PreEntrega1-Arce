@@ -119,15 +119,25 @@ listaCarrito.addEventListener("click",item=>{
         //recuperamos el producto
         const producto = item.target.parentElement;
         const nombre = producto.querySelector('h3').textContent;
-        //Se guardan los productos que no tienen el nombre del producto que queremos eliminar
-        const newlist = cart.filter(product => product.nombre !== nombre);
-        //igualamaos el carrito al nuevo arreglo sin el producto eliminado
-        cart=newlist;
-        localStorage.setItem('cart',JSON.stringify(cart));
-        //agregamos otra vez los productos al dom del carrito pero con la nueva lista y contamos otra vez los productos
-        agregarHtml();
-        contar_productos();
-        calcular_total();
+        //Para que cuando haga click vaya sacando de a 1 los productos hasta que no quede nada y lo elimine del carrito
+        const productoCarrito= cart.find(prod=>prod.nombre===nombre);
+        if(productoCarrito.cantidad>1){
+            productoCarrito.cantidad--;
+            console.log(productoCarrito);
+            agregarHtml();
+            contar_productos();
+            calcular_total();
+        }else{
+            //Se guardan los productos que no tienen el nombre del producto que queremos eliminar
+            const newlist = cart.filter(product => product.nombre !== nombre);
+            //igualamaos el carrito al nuevo arreglo sin el producto eliminado
+            cart=newlist;
+            localStorage.setItem('cart',JSON.stringify(cart));
+            //agregamos otra vez los productos al dom del carrito pero con la nueva lista y contamos otra vez los productos
+            agregarHtml();
+            contar_productos();
+            calcular_total();
+        }
     }
 });
 

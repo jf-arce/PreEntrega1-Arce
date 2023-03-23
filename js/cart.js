@@ -20,7 +20,7 @@ btnCerrar.addEventListener('click', () => {
     setTimeout(() => {
         cart__modal.classList.remove('animate__slideInDown', 'animate__backOutUp');
         cart__modal.style.display = 'none';
-    }, 3000); // Tiempo suficiente para que la animación termine
+    }, 1000); // Tiempo suficiente para que la animación termine
 });
 
 /*************************** FUNCIONES CARRITO ***********************************************/
@@ -111,7 +111,6 @@ producto_container.addEventListener('click',item =>{
 
 //eliminar producto
 listaCarrito.addEventListener("click",item=>{
-
     if(item.target.classList.contains("producto_eliminar")){
         //recuperamos el producto
         const producto = item.target.parentElement;
@@ -139,6 +138,7 @@ listaCarrito.addEventListener("click",item=>{
 });
 
 /*Boton vaciar carrito*/
+
 btn_vaciarCarrito.addEventListener('click',()=>{
     cart=[];
     localStorage.setItem('cart',JSON.stringify(cart));
@@ -146,4 +146,3 @@ btn_vaciarCarrito.addEventListener('click',()=>{
     contar_productos();
     calcular_total();
 })
-

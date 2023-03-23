@@ -8,6 +8,7 @@ const producto_eliminar = document.getElementById('producto_eliminar');
 const total_pagar= document.getElementById('total-pagar');
 const btn_vaciarCarrito= document.getElementById('btn-vaciarCarrito');
 
+
 /******************** Animaciones de abrir y cerrar el carrito *******************************/
 cart__icon.addEventListener('click',()=>{
     cart__modal.style.display = 'block';
@@ -23,9 +24,9 @@ btnCerrar.addEventListener('click', () => {
     }, 1000); // Tiempo suficiente para que la animación termine
 });
 
-/*************************** FUNCIONES CARRITO ***********************************************/
+/****************************** FUNCIONES CARRITO ***********************************************/
 
-/**Muestra los productos que haya en el carrito**/
+/** MOSTRAR PRODUCTOS que haya en el carrito**/
 const agregarHtml=()=>{
     listaCarrito.innerHTML='';
     cart.forEach(product=>{
@@ -49,7 +50,7 @@ const contar_productos =()=>{
     contadorProducto.textContent=totalProductos;
 }
 
-//Caluclar total a pagar de todos los productos
+//Calcular TOTAL a pagar de todos los productos
 const calcular_total=()=>{
     const totalCarrito = cart.reduce((total, prod) => total + (parseInt(prod.precio.substring(1))*prod.cantidad), 0);
     total_pagar.textContent=totalCarrito;
@@ -68,7 +69,6 @@ const verificar_stock =()=>{
     }
 }
 
-/***************************** EVENTOS DEL DOM *************************************************/
 
 //verifica si hay productos en el localStorage del carrito y devuelve el carrito con los productos o vacio.
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -76,38 +76,6 @@ agregarHtml();
 contar_productos();
 calcular_total();
 
-//Producto_container esta declarada en stock.js. 
-producto_container.addEventListener('click',item =>{
-    if(item.target.classList.contains("producto_btn")){
-        //recuperamos el producto
-        const producto = item.target.parentElement;
-        //Verificar si queda stock del producto
-        const infoProduct = {
-            cantidad:1,
-            imagen: producto.querySelector('.producto_img').src,
-            nombre: producto.querySelector('.producto_nombre').textContent,
-            precio: producto.querySelector('.producto_precio').textContent,
-        }
-        //Si el producto elegido ya existe entonces aumenta la cantidad, de lo contrario se pushea normal
-        const existe = cart.some(producto=> producto.nombre === infoProduct.nombre);
-        if(existe){
-            const index = cart.findIndex(producto=> producto.nombre === infoProduct.nombre);
-            cart[index].cantidad++;
-            localStorage.setItem('cart',JSON.stringify(cart));
-        }else{
-            //Se pushea el producto al carrito local y se guarda en el localStorage
-            cart.push(infoProduct);
-            localStorage.setItem('cart',JSON.stringify(cart));
-        }
-        verificar_stock();
-        //agregamos el producto al carrito en el DOM
-        agregarHtml();
-        //Da la cantidad de productos que hay en el carrito
-        contar_productos();
-        //Calcula el precio total de los productos
-        calcular_total();
-    }
-})
 
 //eliminar producto
 listaCarrito.addEventListener("click",item=>{
@@ -119,7 +87,6 @@ listaCarrito.addEventListener("click",item=>{
         const productoCarrito= cart.find(prod=>prod.nombre===nombre);
         if(productoCarrito.cantidad>1){
             productoCarrito.cantidad--;
-            console.log(productoCarrito);
             agregarHtml();
             contar_productos();
             calcular_total();

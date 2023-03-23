@@ -40,18 +40,4 @@ const zapatillasDestacadas =[
 ]
 
 
-const producto_container = document.getElementById('producto_container');
-
-//**************** Creacion de los productos en el dom de shop segun el stock que haya *********************
-zapatillas.forEach(item => {
-    const div = document.createElement('div');
-    div.classList.add('producto');
-    div.innerHTML=`
-    <img class="producto_img" src="${item.imagen}"></img>
-    <h3 class="producto_nombre">${item.marca} ${item.modelo}</h3>
-    <p class="producto_precio">$${item.precio}</p>
-    <button type="button" class="producto_btn">Añadir al carrito</button>
-`
-    producto_container.appendChild(div);
-});
 

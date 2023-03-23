@@ -65,6 +65,7 @@ const verificar_stock =()=>{
         if(prod_stock.stock<cart[i].cantidad){
             alert(`No quedan mas ${cart[i].nombre}, Stock insuficiente!`);
             cart[i].cantidad--;
+            localStorage.setItem('cart',JSON.stringify(cart));
         }
     }
 }
@@ -87,6 +88,7 @@ listaCarrito.addEventListener("click",item=>{
         const productoCarrito= cart.find(prod=>prod.nombre===nombre);
         if(productoCarrito.cantidad>1){
             productoCarrito.cantidad--;
+            localStorage.setItem('cart',JSON.stringify(cart));
             agregarHtml();
             contar_productos();
             calcular_total();

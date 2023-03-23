@@ -115,3 +115,4 @@ btn_vaciarCarrito.addEventListener('click',()=>{
     contar_productos();
     calcular_total();
 })
+

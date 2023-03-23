@@ -20,7 +20,6 @@ producto_container.addEventListener('click',item =>{
     if(item.target.classList.contains("producto_btn")){
         //recuperamos el producto
         const producto = item.target.parentElement;
-        //Verificar si queda stock del producto
         const infoProduct = {
             cantidad:1,
             imagen: producto.querySelector('.producto_img').src,

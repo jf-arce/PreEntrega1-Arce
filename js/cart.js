@@ -60,8 +60,8 @@ const calcular_total=()=>{
 const verificar_stock =()=>{
     for (let i = 0; i < cart.length; i++) {
 
-        const prod_stock=zapatillas.find(producto=>producto.modelo===cart[i].nombre.substring(5));
-
+        const prod_stock=zapatillas.find(producto=>producto.modelo===cart[i].nombre.split(" ")[1]);
+        
         if(prod_stock.stock<cart[i].cantidad){
             alert(`No quedan mas ${cart[i].nombre}, Stock insuficiente!`);
             cart[i].cantidad--;

@@ -11,7 +11,7 @@
 
 #destacados {
   position: relative;
-  min-height: 70vh;
+  min-height: 80vh;
   background: transparent;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -23,25 +23,23 @@
   width: 90%;
   margin: 0 auto; }
   #destacados h2 {
-    font-family: blowbrush;
-    font-size: 3em;
+    font-size: 1.8em;
     font-weight: bold;
-    padding: 30px;
-    margin: 0; }
+    padding: 50px;
+    margin-bottom: 10px; }
 
 .swiper-container {
   width: 100%;
   height: 100%; }
 
 .swiper-slide {
-  background-color: #1A1E17;
+  background-color: #171717;
   color: #fff;
   position: relative;
   text-align: start;
   font-size: 18px;
-  border-radius: 10px;
+  border-radius: 5px;
   text-align: start;
-  box-shadow: 0px 4px 4px rgba(196, 196, 196, 0.25);
   width: 300px;
   display: flex;
   flex-direction: column;
@@ -56,8 +54,8 @@
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px; }
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px; }
 
 .card-description {
   padding: 1rem 1rem; }
@@ -65,8 +63,9 @@
 .card-title, .card-precio {
   margin-bottom: .5rem;
   text-align: center;
-  margin: 10px;
-  text-transform: capitalize; }
+  margin: 20px;
+  text-transform: capitalize;
+  font-size: 1.1em; }
 
 .card-link {
   text-align: center; }
@@ -92,7 +91,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 15px; }
+  border-radius: 5px; }
   .btn-1 .btn-1-link {
     color: aliceblue;
     text-decoration: none; }
@@ -299,12 +298,153 @@ header {
 /********FOOTER*********/
 footer {
   background-color: #000000;
-  /*font-family: 'Karla', sans-serif;*/
-  font-family: 'Monument Extended', sans-serif;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 300px auto;
-  grid-template-areas: "logo-redes mail-telefono" "copyright copyright"; }
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.footer__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 30px; }
+  .footer__container .footer__suscripcion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 50%; }
+    .footer__container .footer__suscripcion .suscripcion__newsletter {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 50px 50px 30px 50px;
+      height: 20%;
+      width: 100%; }
+      .footer__container .footer__suscripcion .suscripcion__newsletter label {
+        font-size: 1em;
+        margin-bottom: 15px;
+        font-weight: bold; }
+      .footer__container .footer__suscripcion .suscripcion__newsletter .input-mail {
+        border-radius: 5px;
+        padding: 5px;
+        text-indent: 6px;
+        font-size: 0.8em;
+        width: 60%; }
+      .footer__container .footer__suscripcion .suscripcion__newsletter .input-enviar {
+        color: #DFDFDF;
+        background: transparent;
+        border: 1px solid #DFDFDF;
+        border-radius: 5px;
+        margin-top: 15px;
+        width: 15%;
+        padding: 3px;
+        font-size: 0.8em; }
+        .footer__container .footer__suscripcion .suscripcion__newsletter .input-enviar:hover {
+          background-color: #ffffff;
+          color: black; }
+    .footer__container .footer__suscripcion .footer__icono {
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 40px;
+      width: 100%; }
+      .footer__container .footer__suscripcion .footer__icono .icono__redes-sociales {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px; }
+        .footer__container .footer__suscripcion .footer__icono .icono__redes-sociales .redes-sociales__icon {
+          padding: 0px 15px; }
+          .footer__container .footer__suscripcion .footer__icono .icono__redes-sociales .redes-sociales__icon a {
+            color: #DFDFDF;
+            text-decoration: none; }
+            .footer__container .footer__suscripcion .footer__icono .icono__redes-sociales .redes-sociales__icon a:hover {
+              color: #ffffff; }
+            .footer__container .footer__suscripcion .footer__icono .icono__redes-sociales .redes-sociales__icon a .fa-brands {
+              font-size: 1.2em;
+              /* Cambia el tamaño del icono según tus preferencias */ }
+  .footer__container .footer__contacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 50%; }
+    .footer__container .footer__contacto .contacto__title {
+      color: #DFDFDF;
+      padding: 5px;
+      font-size: 1.1em;
+      font-weight: bold; }
+    .footer__container .footer__contacto .contacto__link {
+      text-decoration: none;
+      color: #DFDFDF;
+      padding: 5px;
+      font-size: 0.9em;
+      text-decoration: underline; }
+      .footer__container .footer__contacto .contacto__link:hover {
+        color: #ffffff; }
+    .footer__container .footer__contacto .contacto__redes {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%; }
+      .footer__container .footer__contacto .contacto__redes .redes__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 10px 10px 5px; }
+        .footer__container .footer__contacto .contacto__redes .redes__container .fa-solid, .footer__container .footer__contacto .contacto__redes .redes__container .fa-brands {
+          font-size: 1em; }
+        .footer__container .footer__contacto .contacto__redes .redes__container h4 {
+          margin: 0px 10px;
+          font-size: 0.9em; }
+
+.footer__pagos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  margin-top: 30px;
+  border-bottom: 1px solid #DFDFDF; }
+  .footer__pagos .pagos__img {
+    width: 5%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px; }
+    .footer__pagos .pagos__img img {
+      width: 100%;
+      height: 40px;
+      border-radius: 3px; }
+
+.footer__copyright {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; }
+  .footer__copyright .copyright__link {
+    text-decoration: none;
+    color: #DFDFDF;
+    font-size: 0.7em;
+    margin-right: 10px;
+    text-decoration: underline; }
+    .footer__copyright .copyright__link:hover {
+      color: #ffffff; }
+  .footer__copyright .copyright__text {
+    font-size: 0.7em;
+    margin: 0;
+    margin-right: 10px; }
+  .footer__copyright .copyright__link--text {
+    text-decoration: none;
+    text-decoration: underline;
+    color: #DFDFDF;
+    font-size: 1em; }
+    .footer__copyright .copyright__link--text:hover {
+      color: #ffffff; }
 
 /********************* HERO *********************/
 #hero {
@@ -330,8 +470,7 @@ footer {
 #propaganda {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 30px; }
+  align-items: center; }
   #propaganda .propaganda-container {
     padding: 30px 100px; }
   #propaganda img {
@@ -356,7 +495,8 @@ footer {
     box-shadow: inset 0 0 100px magenta, 8px 0px 100px magenta; } }
 
 .propagandas-destacados {
-  background-image: url(../assets/images/paredNeon.jpg);
+  background: #020024;
+  background: linear-gradient(90deg, #020024 0%, #262626 0%, #9f319b 50%, #260026 100%);
   background-size: cover;
   background-position: center;
   background-attachment: fixed; }
@@ -421,7 +561,7 @@ body {
   justify-content: center;
   margin-top: 100px; }
   #producto_container .producto {
-    background-color: #1A1E17;
+    background-color: #171717;
     border: 1px black solid;
     height: 500px;
     width: 350px;
@@ -437,10 +577,10 @@ body {
       text-transform: capitalize; }
     #producto_container .producto .producto_precio {
       color: #DFDFDF;
-      margin-bottom: 20px; }
+      margin-bottom: 10px; }
     #producto_container .producto .producto_img {
       height: 200px;
-      max-width: 90%;
+      max-width: 100%;
       margin: 20px;
       border-radius: 0.2rem; }
 
@@ -455,14 +595,17 @@ body {
   display: inline-block;
   width: 15rem;
   height: 3rem;
-  border: none;
-  border-radius: 0.4rem;
+  border: 1px solid #DFDFDF;
+  color: #DFDFDF;
+  border-radius: 3px;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #14d3aa;
-  color: #1A1E17;
-  margin-bottom: 20px; }
+  background: transparent;
+  margin-bottom: 10px;
+  padding: 3px;
+  font-size: 0.8em; }
   .producto_btn:hover {
-    background-color: #10ad8b; }
+    background-color: #DFDFDF;
+    color: black; }

@@ -25,7 +25,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
     .propaganda-container{
       padding: 30px 100px;
     }
@@ -61,7 +60,9 @@
 }
 
 .propagandas-destacados{
-  background-image: url(../assets/images/paredNeon.jpg);
+  //background-image: url(../assets/images/paredNeon.jpg);
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(38,38,38,1) 0%, rgba(159,49,155,1) 50%, rgba(38,0,38,1) 100%);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

@@ -1,14 +1,13 @@
 #destacados{
     position: relative;
-    min-height: 80vh;
+    min-height: 70vh;
     background: transparent;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
     color: rgb(224, 224, 224);
     display: flex;
     flex-direction: column;
-    
     align-items: center;
+
     overflow-x: hidden;
     width: 90%;
     margin: 0 auto;
@@ -16,7 +15,7 @@
     h2{
         font-size: 1.8em;
         font-weight: bold;
-        padding: 50px;
+        padding: 30px;
         margin-bottom: 10px;
     }
 }
@@ -40,13 +39,12 @@
     align-items: center;
 
     &:hover{
-        transform: scale(1.1);
-        transition: transform 0.2s ease;
+        transform: scale(1.05);
+        transition: transform 0.1s ease;
     }
 }
 
 .swiper-slide img {
-    //padding: 20px;
     display: block;
     width: 100%;
     height: 180px;
@@ -79,4 +77,31 @@
 .swiper-button-prev{
     left: 0px !important;
     color: #fff;
+}
+
+
+@media screen and (max-width: 768px) {
+    #destacados{
+        min-height: 65vh;
+        align-items: center;
+        justify-content: flex-start;
+        h2{
+            font-size: 1.7em;
+            padding: 20px;
+        }
+    }
+    .swiper-slide{
+        width: 20%;
+        &:hover{
+            transform: scale(1);
+        }
+    }
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 20%px;
+        object-fit: cover;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
 }

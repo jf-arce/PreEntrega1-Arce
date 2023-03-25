@@ -141,7 +141,7 @@ footer{
 		margin: 0px 10px;
 		img{
 			width: 100%;
-			height: 40px;
+			height: 20%;
 			border-radius: 3px;
 		}
 		
@@ -176,6 +176,79 @@ footer{
 		font-size: 1em;
 		&:hover{
 			color: #ffffff;
+		}
+	}
+}
+
+
+@media screen and (max-width: 768px) {
+	.footer__container{
+		flex-direction: column;
+		margin-top: 10px;
+		.footer__suscripcion{
+			padding: 0px;
+			width: 100%;
+			.suscripcion__newsletter{
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				padding: 30px 50px 30px 50px;
+				label{
+					font-size: 0.8em;
+				}
+				.input-mail{
+					width: 80%;
+				}
+				.input-enviar{
+					width: 30%;
+					padding: 3px;
+					font-size: 0.8em;
+				}
+			}
+			.footer__icono{
+				justify-content: center;
+				padding-left: 0px;
+			}
+		}
+
+		.footer__contacto{
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			padding: 20px;
+			.contacto__redes{
+				justify-content: center;
+				align-items: center;
+			}
+		}
+	}
+	
+	.footer__pagos{
+		margin: 0;
+		.pagos__img{
+			width: 100%;
+			height: 100%;
+			img{
+				width: 100%;
+			}
+		}
+	}
+
+	.footer__copyright{
+		flex-direction: column;
+		padding: 10px;
+		.copyright__link{
+			font-size: 0.7em;
+			text-align: center;
+			margin-right: 0px;
+		}
+		.copyright__text{
+			text-align: center;
+			font-size: 0.7em;
+			margin: 0;
+			margin-right: 0px;
+			margin-top:15px
 		}
 	}
 }

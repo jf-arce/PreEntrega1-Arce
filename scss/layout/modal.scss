@@ -1,0 +1,144 @@
+/*************Estilos para el modal **************/
+#cart__modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    color: #000;
+    .modal__container{
+        background-color: white;
+        margin: 10% auto;
+        position: absolute;
+        top: 0px;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        border: 1px solid #888;
+        border-radius: 10px;
+        width: 80%;
+        h2{
+            font-size: 1.4em;
+        } 
+        .comprar_container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            #btn-comprar{
+                position: relative;
+                display: inline-block;
+                width: 15rem;
+                height: 3rem;
+                border: none; 
+                border-radius: 0.4rem;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #14d3aa;
+                color:#1A1E17;
+                &:hover{
+                    background-color: #10ad8b;
+                }
+            }
+            #btn-vaciarCarrito{
+                position: relative;
+                display: inline-block;
+                // margin: 0 auto;
+                width: 15rem;
+                height: 3rem;
+                border: none; 
+                border-radius: 0.4rem;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color:  #ff1f1f;;
+                color:#1A1E17;
+                &:hover{
+                    background-color: #c11919;
+                }
+            }
+
+        }
+    }
+}
+
+#cart_total{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.5em;
+    #total-pagar{
+        margin-left: 8px;
+        margin-bottom: 8px;
+    }
+}
+
+
+/* Estilos para el botón de cerrar */
+.cerrar {
+color: #aaaaaa;
+display: inline;
+float: right;
+font-size: 28px;
+font-weight: bold;
+color: #000000;
+border-radius: 0.5rem;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+    color: #ff1f1f;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+  /* Estilos para la lista de productos */
+#lista-carrito {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px; 
+    li{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px;
+        border: 0.5px solid #000000;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        .producto_nombre{
+            //flex-grow: 0.5;
+            margin-right: 10px;
+            display: inline-block;
+            font-size: 1.3em;
+        }
+        .producto_precio{
+            font-weight: bold;
+            
+        }
+        .producto_eliminar{
+            color: #ff1f1f;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}
+.bi.bi-trash{
+    color: #ff1f1f;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover{
+        color: #b41717;
+    }
+}

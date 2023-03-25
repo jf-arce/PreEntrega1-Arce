@@ -8,17 +8,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-    .hero__title{
-        font-family: blowbrush;
-        font-size: 7em;
-        padding: 100px 50px;
-        color: rgb(224, 224, 224);
-    }
-    .hero__subtitle{
-        font-family: blowbrush;
-        font-size: 2em;
-        color: rgb(224, 224, 224);
-    }
+  .hero__title{
+    font-family: blowbrush;
+    font-size: 7em;
+    padding: 50px 0px;
+    text-align: center;
+    color: rgb(224, 224, 224);
+  }
+  .hero__subtitle{
+    font-family: blowbrush;
+    text-align: center;
+    font-size: 2em;
+    color: rgb(224, 224, 224);
+  }
 }
 /*********************PROPAGANDA DESTACADA*********************/
 #propaganda{
@@ -32,7 +34,6 @@
     width: 70vw;
     padding: 10px;
     border: 2px solid rgb(255, 255, 255);
-    //box-shadow: inset 0 0 100px rgb(195, 0, 255), 8px 0px 100px rgb(195, 0, 255);
     border-radius: 50px;
 
     animation: cambiar-color 10s ease-in-out infinite;
@@ -60,12 +61,8 @@
 }
 
 .propagandas-destacados{
-  //background-image: url(../assets/images/paredNeon.jpg);
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(38,38,38,1) 0%, rgba(159,49,155,1) 50%, rgba(38,0,38,1) 100%);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
 }
 
 /********************* SEPARADOR DE SECCIONES *********************/
@@ -87,8 +84,8 @@
     grid-template-columns: repeat(4,auto);
     grid-template-rows: repeat(2,auto);
     grid-template-areas: 
-    "img img img"
-    "img img img";
+    "img img img img"
+    "img img img img";
     padding: 30px;
     justify-items: center;
     align-items: center;
@@ -126,3 +123,47 @@
   }
 }
 
+
+/***************************** MEDIA QUERIES *********************/
+
+/********************* HERO **************************/
+@media screen and (max-width: 768px){
+  #hero{
+    background-position: center;
+    .hero__title{
+      font-size: 4em;
+      padding: 30px 0px;
+    }
+    .hero__subtitle{
+      font-size: 2em;
+    }
+  }
+}
+/*********************PROPAGANDA DESTACADA*********************/
+@media screen and (max-width: 768px){
+  #propaganda{
+    .propaganda-container{
+      padding: 30px 0px 30px 0px;
+    }
+  img{
+    width: 90vw;
+    padding: 2px;
+    }
+  }
+}
+/************************ SECCION DE MARCAS ****************/
+@media screen and (max-width: 768px){
+  #marcas{
+    .marcas__container{
+      grid-template-columns: repeat(2,auto);
+      grid-template-rows: repeat(4,auto);
+      grid-template-areas: 
+      "img img"
+      "img img"
+      "img img"
+      "img img";
+      gap: 20px;
+      padding: 10px;
+    }
+  }
+}

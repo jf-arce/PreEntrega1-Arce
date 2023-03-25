@@ -9,43 +9,40 @@ const posters=[
 posters.forEach(item=>{
     const div= document.createElement("div");
     div.classList.add("card");
-    div.classList.add(`${item.tipo}`);
-    div.classList.add("active");
     div.innerHTML=`
-        <img class="card__img" src="${item.img}" alt="">
+        <a class="card__link" href="./pages/shop.html"><img class="card__img" src="${item.img}" alt=""></a>
     `
     cardsContainer.appendChild(div); 
 })
 
 //Animacion
+
 const cards = document.querySelectorAll('.card');
 
 cards.forEach(card => {
+  //Ya que cards es una NodeList para poder usar el filter la convertimos en un array
+  const otherCards = Array.from(cards).filter(c => c !== card);
+
+ //Evento cuando estamos con el cursor arriba de la tarjeta
   card.addEventListener('mouseover', () => {
-    //card.classList.toggle('active');
-    card.style.transform = "scale(1.04)"
-    card.style.transition = "transform 0.1s ease";
-    cards.forEach(c => {
-      if (c !== card) {
-        c.style.transform = "scale(0.9)";
-        c.style.filter = "brightness(0.5) saturate(0.5) contrast(0.5) blur(1px)";
-      }
+
+    card.classList.add('card-active');
+
+    otherCards.forEach(c => {
+      c.classList.add('card-desactive');
     });
   });
 
+  //Evento cuando sacamos el cursor de la tarjeta
   card.addEventListener('mouseout', () => {
-    //card.classList.remove('active');
-    card.style.transform = "scale(1)"
-    card.style.transition = "transform 0.1s ease";
-    cards.forEach(c => {
-      if (c !== card) {
-        c.style.transform = "scale(1)";
-        c.style.filter = "brightness(1) saturate(1) contrast(1) blur(0px)"
-      }
+  
+    card.classList.remove('card-active');
+
+    otherCards.forEach(c => {
+      c.classList.remove('card-desactive');
     });
   });
+  
 });
-
-
 
 

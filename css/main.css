@@ -601,6 +601,17 @@ footer {
   .bi.bi-trash:hover {
     color: #b41717; }
 
+@media screen and (max-width: 768px) {
+  #cart__modal .modal__container {
+    width: 90%; }
+    #cart__modal .modal__container h2 {
+      font-size: 1.3em; }
+    #cart__modal .modal__container .comprar_container {
+      column-gap: 10px; }
+  /* Estilos para la lista de productos */
+  #lista-carrito li {
+    flex-direction: column; } }
+
 /********************* HERO *********************/
 #hero {
   background-image: url(../assets/images/luces-neon-wall.jpg);

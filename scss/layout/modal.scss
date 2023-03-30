@@ -142,3 +142,23 @@ border-radius: 0.5rem;
         color: #b41717;
     }
 }
+
+@media screen and (max-width: 768px) {
+    #cart__modal{
+        .modal__container{
+            width: 90%;
+            h2{
+                font-size: 1.3em;
+            } 
+            .comprar_container{
+                column-gap: 10px;
+            }
+        }
+    }
+    /* Estilos para la lista de productos */
+    #lista-carrito {
+        li{
+            flex-direction: column;
+        }
+    }
+}

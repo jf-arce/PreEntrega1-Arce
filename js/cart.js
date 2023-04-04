@@ -8,7 +8,6 @@ const producto_eliminar = document.getElementById('producto_eliminar');
 const total_pagar= document.getElementById('total-pagar');
 const btn_vaciarCarrito= document.getElementById('btn-vaciarCarrito');
 
-
 /******************** Animaciones de abrir y cerrar el carrito *******************************/
 cart__icon.addEventListener('click',()=>{
     cart__modal.style.display = 'block';
@@ -56,27 +55,11 @@ const calcular_total=()=>{
     total_pagar.textContent=totalCarrito;
 }
 
-//verificar stock
-const verificar_stock =()=>{
-    for (let i = 0; i < cart.length; i++) {
-
-        const prod_stock=zapatillas.find(producto=>producto.modelo===cart[i].nombre.split(" ")[1]);
-        
-        if(prod_stock.stock<cart[i].cantidad){
-            alert(`No quedan mas ${cart[i].nombre}, Stock insuficiente!`);
-            cart[i].cantidad--;
-            localStorage.setItem('cart',JSON.stringify(cart));
-        }
-    }
-}
-
-
 //verifica si hay productos en el localStorage del carrito y devuelve el carrito con los productos o vacio.
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 agregarHtml();
 contar_productos();
 calcular_total();
-
 
 //eliminar producto
 listaCarrito.addEventListener("click",item=>{
@@ -116,3 +99,31 @@ btn_vaciarCarrito.addEventListener('click',()=>{
     calcular_total();
 })
 
+/*********** BOTON COMPRAR ******* */
+
+const comprar = document.getElementById('btn-comprar');
+
+comprar.addEventListener('click',()=>{
+    let timerInterval;
+    Swal.fire({
+    title: 'Cargando...',
+    timer: 1200,
+    timerProgressBar: true,
+    didOpen: () => {
+        Swal.showLoading()
+        const b = Swal.getHtmlContainer().querySelector('b')
+        timerInterval = setInterval(() => {
+        b.textContent = Swal.getTimerLeft()
+        }, 100)
+    },
+    willClose: () => {
+        clearInterval(timerInterval)
+    }
+    }).then((result) => {
+    /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log('I was closed by the timer')
+        }
+        window.location.href = "../pages/buys.html";
+    }) 
+});

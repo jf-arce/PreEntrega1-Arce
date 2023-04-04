@@ -1,0 +1,25 @@
+[
+    {"marca":"nike","modelo":"airforce","precio":50000,"stock":5,"imagen":"../assets/images/air-force-1-arg.jpg"},
+    {"marca":"nike","modelo":"jordan","precio":60000,"stock":7,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
+    {"marca":"nike","modelo":"airmax","precio":38000,"stock":6,"imagen":"../assets/images/airmax-270.jpg"},
+    {"marca":"nike","modelo":"vapormax","precio":40000,"stock":6,"imagen":"../assets/images/vapor-max-flyknit.jpg"},
+    {"marca":"nike","modelo":"uptempo","precio":45000,"stock":5,"imagen":"../assets/images/nike-uptempo.jpg"},
+
+    {"marca":"adidas","modelo":"galaxy","precio":35000,"stock":5,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
+    {"marca":"adidas","modelo":"superstar","precio":25000,"stock":6,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
+    {"marca":"adidas","modelo":"forum","precio":30000,"stock":4,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
+    {"marca":"adidas","modelo":"stansmith","precio":40000,"stock":8,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
+
+    {"marca":"vans","modelo":"oldskool","precio":35000,"stock":10,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
+    {"marca":"vans","modelo":"era","precio":30000,"stock":8,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
+    {"marca":"vans","modelo":"sk8high","precio":38000,"stock":6,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
+
+    {"marca":"converse","modelo":"allstar","precio":35000,"stock":10,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
+    {"marca":"converse","modelo":"courtlandt","precio":30000,"stock":8,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
+    {"marca":"converse","modelo":"chuck taylor all star","precio":38000,"stock":6,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
+
+    {"marca":"dc","modelo":"midway","precio":40000,"stock":8,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
+    {"marca":"dc","modelo":"manual sd","precio":38000,"stock":8,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
+    {"marca":"dc","modelo":"kalisvulc","precio":35000,"stock":5,"imagen":"../assets/images/jordan-air-1-retro.jpg"}
+]
+

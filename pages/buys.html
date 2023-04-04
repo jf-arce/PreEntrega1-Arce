@@ -16,12 +16,12 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <link rel="stylesheet" href="../css/main.css">
         <title>Shop</title>
     </head>
-    <body id="body-shop">
+    <body id="body-buy">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://unpkg.com/cleave.js@1.6.0/dist/cleave.min.js"></script>
         <header>
             <nav class="header__nav">
                 <ul class="nav__list">
@@ -35,7 +35,7 @@
                         <a class="item__link underline" href="">Contact</a>
                     </li>
                     <li class="list__item">
-                        <a class="item__link underline" href="">Shop</a>
+                        <a class="item__link underline" href="../pages/shop.html">Shop</a>
                     </li>
                 </ul>
             </nav>
@@ -68,24 +68,37 @@
                 </div>
             </div>
         </header>
-        <main id="main-shop">
-            <section id="filtrado">
-                <div class="filtrado__container">
-                    <div class="container__filtro">
-                        <h3>Marca</h3>
-                        <ul class="lista__filtrados"></ul>
+        <main id="main-buy">
+            <section class="data-container">
+                <ul id="show-cart">
+
+                </ul>
+                <form id="data-cliente" action="">
+                    <div class="data-title">
+                        <h1>Datos para realizar la compra</h1>
                     </div>
-                    <div class="container__filtro">
-                        <h3>Precio</h3>
-                        <ul class="lista__filtrados">
-                            
-                        </ul>
+                    
+                    <label for="">Nombre</label>
+                    <input type="text" placeholder="Nombre" name="name" id="name">
+                    <label for="">Apellido</label>
+                    <input type="text" name="surname" id="surname" placeholder="Apellido">
+                    <label for="dni">DNI</label>
+                    <input type="text" name="dni" id="dni" placeholder="Dni">
+                    <label for="email">Mail</label>
+                    <input type="email" name="mail" id="email" placeholder="Email">
+                    
+                    <label for="num-cart">Número de tarjeta</label>
+                    <input type="text" name="credit" id="num-cart" placeholder="Numero de tarjeta">
+                    <!-- <img id="tarjeta-visa" src="../assets/images/Metodos de pago/visa.png" alt="Visa">
+                    <img id="tarjeta-mastercard" src="../assets/images/Metodos de pago/mastercard.png" alt="Mastercard">
+                    <img id="tarjeta-amex" src="amex.png" alt="American Express"> -->
+                    <div class="comprar-button"> 
+                        <button onclick="event.preventDefault()"id="data-comprar">Comprar</button>
                     </div>
-                </div>
+                    
+                </form>
             </section>
-            <section id="compras">
-                <div id="producto_container"></div>
-            </section>
+
             
         </main>
         <footer>
@@ -94,10 +107,9 @@
 
         <script src="https://kit.fontawesome.com/d8a7984a4f.js" crossorigin="anonymous"></script>
         <script src="../js/stock.js"></script>
-        <script src="../js/shop.js"></script>
         <script src="../js/cart.js"></script>
         <script src="../js/header.js"></script>
-        <script src="../js/filtrado.js"></script>
-
+        <script src="../js/buys.js"></script>
+        
     </body>
 </html>

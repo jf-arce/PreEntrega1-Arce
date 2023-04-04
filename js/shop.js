@@ -2,18 +2,20 @@
 const producto_container = document.getElementById('producto_container');
 
 //**************** Creacion de los productos en el dom de shop segun el stock que haya *********************
-zapatillas.forEach(item => {
-    const div = document.createElement('div');
-    div.classList.add('producto');
-    div.innerHTML=`
-    <img class="producto_img" src="${item.imagen}"></img>
-    <h3 class="producto_nombre">${item.marca} ${item.modelo}</h3>
-    <p class="producto_precio">$${item.precio}</p>
-    <button type="button" class="producto_btn">Añadir al carrito</button>
-`
-    producto_container.appendChild(div);
-});
 
+stock.then((stock) => {
+    stock.forEach(item => {
+        const div = document.createElement('div');
+        div.classList.add('producto');
+        div.innerHTML=`
+        <img class="producto_img" src="${item.imagen}"></img>
+        <h3 class="producto_nombre">${item.marca} ${item.modelo}</h3>
+        <p class="producto_precio">$${item.precio}</p>
+        <button type="button" class="producto_btn">Añadir al carrito</button>
+    `
+        producto_container.appendChild(div);
+    });
+})
 
 //********************** Agrega productos al carrito **************************
 producto_container.addEventListener('click',item =>{
@@ -34,7 +36,7 @@ producto_container.addEventListener('click',item =>{
             localStorage.setItem('cart',JSON.stringify(cart));
         }else{
             //Se pushea el producto al carrito local y se guarda en el localStorage
-            cart.push(infoProduct);
+            cart=[...cart,infoProduct]; //Guarda el nuevo producto al final del carrito.
             localStorage.setItem('cart',JSON.stringify(cart));
         }
         verificar_stock();
@@ -46,3 +48,5 @@ producto_container.addEventListener('click',item =>{
         calcular_total();
     }
 })
+
+

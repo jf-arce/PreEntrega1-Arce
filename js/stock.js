@@ -6,7 +6,6 @@ const traerStock = async () =>{
         return stock;
     }catch(error){
         console.log(error);
-        body.innerHTML = `${error}`;
     }   
 }
 

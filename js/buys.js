@@ -48,10 +48,73 @@ const agregarProdcutos=()=>{
 
 agregarProdcutos();
 
-/**************BOTON COMPRAR ***** */
+/***********VALIDAR FORMULARIO********** */
+// Obtener el formulario
+
+
+// Función para validar el formato del correo electrónico
+function isValidEmail(email) {
+  const emailRegex = /\S+@\S+\.\S+/;
+  return emailRegex.test(email);
+}
+
+
+/************** BOTON COMPRAR ******/
+const form = document.getElementById('data-cliente');
 const dataComprar = document.getElementById('data-comprar');
 
-dataComprar.addEventListener('click',()=>{
+
+
+form.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    const nombre = document.getElementById('name').value;
+    const surname = document.getElementById('surname').value;
+    const dni = document.getElementById('dni').value;
+    const email = document.getElementById('email').value;
+    const credit = document.getElementById('num-cart').value;
+    // Validar los campos
+    if (nombre.trim() === '') {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Por favor, ingrese su nombre',
+        })
+        return;
+    }
+    if (surname.trim() === '') {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Por favor, ingrese su apellido',
+        })
+        return;
+    }
+    if (dni.trim() === '') {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Por favor, ingrese su Dni',
+        })
+        return;
+    }
+    if (!isValidEmail(email)) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Por favor, ingrese un email valido',
+        })
+        return;
+    }
+    if (credit.trim() === '') {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Por favor, ingrese una tarjeta',
+        })
+        return;
+    }
+
+    // Si todo está bien, procesar la compra
     cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart.forEach(prod =>{
         stock.then(stock=>{
@@ -60,7 +123,6 @@ dataComprar.addEventListener('click',()=>{
             console.log(stock);
         });
     })
-
     cart = [];
     localStorage.setItem('cart', JSON.stringify(cart));
     Swal.fire({
@@ -68,8 +130,16 @@ dataComprar.addEventListener('click',()=>{
         title: 'Compra exitosa!',
         text: 'Muchas gracias por confiar en UrbanDrip',
     })
+    
+    // Redireccionar al usuario a otra página después de un breve retraso
     setTimeout(() => {
+        form.submit();
         window.location.href = "../pages/shop.html";
     }, 2000);
+    
+    
 })
 
+// dataComprar.addEventListener('click',()=>{
+    
+// })

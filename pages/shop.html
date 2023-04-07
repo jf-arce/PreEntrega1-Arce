@@ -28,17 +28,16 @@
                     <li class="list__item">
                         <a class="item__link underline" href="../index.html">Home</a>
                     </li>
-                    <li class="list__item">
-                        <a class="item__link underline" href="">About</a>
-                    </li>
-                    <li class="list__item">
-                        <a class="item__link underline" href="">Contact</a>
-                    </li>
+                    
                     <li class="list__item">
                         <a class="item__link underline" href="">Shop</a>
                     </li>
                 </ul>
             </nav>
+
+            <div id="hamburger-icon">
+                <i class="fa-solid fa-bars"></i>
+            </div>
 
             <div class="header__icon">
                 <a class="icon__item" href="../index.html"><img class="icon__img" src="../assets/images/urbanDripIcon png 1.png" alt=""></a>
@@ -68,17 +67,61 @@
                 </div>
             </div>
         </header>
+        <div class="container-nav-mobile">
+            <nav class="nav-mobile">
+                <ul class="nav-mobile__list">
+                    <li class="list-mobile__item">
+                        <a class="item-mobile" href="../index.html">Home</a>
+                    </li>
+                    <li class="list-mobile__item">
+                        <a class="item-mobile" href="../pages/shop.html">Shop</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
         <main id="main-shop">
             <section id="filtrado">
                 <div class="filtrado__container">
                     <div class="container__filtro">
                         <h3>Marca</h3>
-                        <ul class="lista__filtrados"></ul>
+                        <ul class="lista__filtrados">
+                            <li class="filtrado__item">
+                                <div class="item__filter">
+                                    <label for="nike">Nike</label>
+                                    <input type="checkbox" name="marca" id="nike" value="nike">
+                                </div>
+                                <div class="item__filter">
+                                    <label for="adidas">Adidas</label>
+                                    <input type="checkbox" name="marca" id="adidas" value="adidas">
+                                </div>
+                                <div class="item__filter">
+                                    <label for="vans">Vans</label>
+                                    <input type="checkbox" name="marca" id="vans" value="vans">
+                                </div>
+                                <div class="item__filter">
+                                    <label for="converse">Converse</label>
+                                    <input type="checkbox" name="marca" id="converse" value="converse">
+                                </div>
+                                <div class="item__filter">
+                                    <label for="dc">Dc</label>
+                                    <input type="checkbox" name="marca" id="dc" value="dc">
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                     <div class="container__filtro">
                         <h3>Precio</h3>
                         <ul class="lista__filtrados">
-                            
+                            <li class="filtrado__item">
+                                <div class="item__filter">
+                                    <label for="precio-min">Minimo</label>
+                                    <input type="number" name="precio" id="precio-min" min="25000" max="60000" placeholder="Desde" value="25000" step="1000">
+                                </div>
+                                <div class="item__filter">
+                                    <label for="precio-max">Maximo</label>
+                                    <input type="number" name="precio" id="precio-max" min="25000" max="60000" placeholder="Hasta" value="60000" step="1000">
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -88,7 +131,81 @@
             </section>
             
         </main>
+
         <footer>
+            <div class="footer__container">
+                <div class="footer__suscripcion">
+                    <form class="suscripcion__newsletter">
+                        <label for="email">SUSCRIBITE A NUESTRO NEWSLETTER</label>
+                        <input type="email" name="email" placeholder="Email" class="input-mail">
+                        <input type="submit" value="Suscribirse" class="input-enviar">
+                    </form>
+                    
+                    <div class="footer__icono">
+                        <div class="icono__redes-sociales">
+                            <div class="redes-sociales__icon">
+                                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                            </div>
+                            <div class="redes-sociales__icon">
+                                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                            </div>
+                            <div class="redes-sociales__icon">
+                                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                            <div class="redes-sociales__icon">
+                                <a href=""><i class="fa-brands fa-tiktok"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer__contacto">
+                    <h4 class="contacto__title">Contacto</h4>
+                    <a class="contacto__link" href="">Preguntas Frecuentes</a>
+                    <a class="contacto__link" href="">Contacto</a>
+                    <div class="contacto__redes">
+                        <div class="redes__container">
+                            <i class="fa-solid fa-phone"></i>
+                            <h4>2215468712</h4>
+                        </div>
+                        <div class="redes__container">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <h4>2215468712</h4>
+                        </div>
+                        <div class="redes__container">
+                            <i class="fa-solid fa-envelope"></i>
+                            <h4>urbandrip@gmail.com</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__pagos">
+                <div class="pagos__img">
+                    <img src="../assets/images/Metodos de pago/mercadopago.jpg" alt="">
+                </div>
+                <div class="pagos__img">
+                    <img src="../assets/images/Metodos de pago/visa.png" alt="">
+                </div>
+                <div class="pagos__img">
+                    <img src="../assets/images/Metodos de pago/mastercard.png" alt="">
+                </div>
+                <div class="pagos__img">
+                    <img src="../assets/images/Metodos de pago/cuentadni.jpg" alt="">
+                </div>
+                <div class="pagos__img">
+                    <img src="../assets/images/Metodos de pago/santander.png" alt="">
+                </div>
+                <div class="pagos__img">
+                    <img src="../assets/images/Metodos de pago/galicia.png" alt="">
+                </div>
+            </div>
+
+            <div class="footer__copyright">
+                <a class="copyright__link" href="">Politicas de Privacidad</a>
+                <h5 class="copyright__text">© Urban Drip Store-2023. Todos los derechos reservados.</h5>
+                <h5 class="copyright__text">Defensa de las y los consumidores. Para reclamos <a class="copyright__link--text" href="">ingrese aquí</a></h5>
+            </div>
             
         </footer>
 
@@ -96,8 +213,9 @@
         <script src="../js/stock.js"></script>
         <script src="../js/shop.js"></script>
         <script src="../js/cart.js"></script>
-        <script src="../js/header.js"></script>
         <script src="../js/filtrado.js"></script>
+        <script src="../js/header.js"></script>
+        
 
     </body>
 </html>

@@ -1,191 +1,66 @@
-const lista__filtrados = document.querySelectorAll(".lista__filtrados");
-const precio__filtrados = document.querySelector(".precio__filtrados");
-const prodFiltrados=[];
+const itemFilter = document.querySelectorAll('.item__filter');
+const precioMin = document.getElementById('precio-min');
+const precioMax = document.getElementById('precio-max');
 
-const marcas=["nike","adidas","vans","converse","dc"];
-const precios=["30000-40000","40000-50000","50000-60000"];
+let marcasSeleccionadas=[];
 
-//mostrar filtros marca
-
-marcas.forEach(marca=>{
-    const li = document.createElement("li");
-    li.classList.add("fitrado-item");
-    li.innerHTML=`
-    <li class="filtrado__item">
-        <label for="${marca}">${marca}</label>
-        <input type="checkbox" name="marca-nike" id="${marca}" value="${marca}">
-    </li>`
-    lista__filtrados[0].appendChild(li);
-});
-//Mostrar filtros precio
-precios.forEach(precio=>{
-    const li = document.createElement("li");
-    li.classList.add("fitrado-item");
-    li.innerHTML=`
-    <li class="filtrado__item">
-        <label for="${precio}">${precio}</label>
-        <input type="checkbox" name="precio" id="${precio}" value="${precio}">
-    </li>`
-    lista__filtrados[1].appendChild(li);
-});
-
-
-/***************** CODIGO FILTRADO     *********** */
-const filtradosItemsMarca = lista__filtrados[0].querySelectorAll(".filtrado__item");
-const filtradosItemsPrecio = lista__filtrados[1].querySelectorAll(".filtrado__item");
-
-stock.then(stock =>{
-    /***************** filtrado por marca ************** */
-    Array.from(filtradosItemsMarca).forEach(li=>{
-        const checkbox = li.querySelector("input");
-        checkbox.addEventListener("change",()=>{
-            if(checkbox.checked){
-                producto_container.innerHTML="";
-                const prodMarcaFiltrados = stock.filter(item=> item.marca === checkbox.value);
-                prodFiltrados.push(prodMarcaFiltrados);
-
-                prodFiltrados.forEach(marcas => {
-                    marcas.forEach(prod => {
-                        const div = document.createElement('div');
-                        div.classList.add('producto');
-                        div.innerHTML=`
-                        <img class="producto_img" src="${prod.imagen}"></img>
-                        <h3 class="producto_nombre">${prod.marca} ${prod.modelo}</h3>
-                        <p class="producto_precio">$${prod.precio}</p>
-                        <button type="button" class="producto_btn">Añadir al carrito</button>`
-                        producto_container.appendChild(div);
-                    });
-                });
-            }else{
-                producto_container.innerHTML="";
-                const prodMarcaEliminar = prodFiltrados.find(item=> item[0].marca === checkbox.value);
-
-                const index = prodFiltrados.indexOf(prodMarcaEliminar);
-                if (index > -1) {
-                    prodFiltrados.splice(index, 1);
-                }
-                console.log(prodFiltrados);
-
-                prodFiltrados.forEach(marcas => {
-                    marcas.forEach(prod => {
-                        const div = document.createElement('div');
-                        div.classList.add('producto');
-                        div.innerHTML=`
-                        <img class="producto_img" src="${prod.imagen}"></img>
-                        <h3 class="producto_nombre">${prod.marca} ${prod.modelo}</h3>
-                        <p class="producto_precio">$${prod.precio}</p>
-                        <button type="button" class="producto_btn">Añadir al carrito</button>`
-                        producto_container.appendChild(div);
-                    });
-                });
-                
-                if(prodFiltrados.length===0){
-                    stock.forEach(item => {
-                        const div = document.createElement('div');
-                        div.classList.add('producto');
-                        div.innerHTML=`
-                        <img class="producto_img" src="${item.imagen}"></img>
-                        <h3 class="producto_nombre">${item.marca} ${item.modelo}</h3>
-                        <p class="producto_precio">$${item.precio}</p>
-                        <button type="button" class="producto_btn">Añadir al carrito</button>
-                    `
-                        producto_container.appendChild(div);
-                    });
-                }
-            }
-        })
-    })
-
-    /****************** FILTRADO POR PRECIOS  *************/
-    console.log(prodFiltrados);
-    Array.from(filtradosItemsPrecio).forEach(li=>{
-        const checkbox = li.querySelector("input");
-        checkbox.addEventListener("change",()=>{
-        if(checkbox.checked){
-            producto_container.innerHTML="";
-            const prodPrecioFiltrados = stock.filter(item=> item.precio >= getPrecioMin(checkbox.value) && item.precio <= getPrecioMax(checkbox.value));
-            console.log(prodPrecioFiltrados);
-            prodFiltrados.push(prodPrecioFiltrados);
-            console.log(prodFiltrados);
-            prodFiltrados.forEach(precio => {
-                precio.forEach(prod => {
-                    const div = document.createElement('div');
-                    div.classList.add('producto');
-                    div.innerHTML=`
-                    <img class="producto_img" src="${prod.imagen}"></img>
-                    <h3 class="producto_nombre">${prod.marca} ${prod.modelo}</h3>
-                    <p class="producto_precio">$${prod.precio}</p>
-                    <button type="button" class="producto_btn">Añadir al carrito</button>`
-                    producto_container.appendChild(div);
-                });
-            });
-        }else{
-            producto_container.innerHTML="";
-            const prodMarcaEliminar = prodFiltrados.find(item=> item[1].precio >= getPrecioMin(checkbox.value) && item[1].precio <= getPrecioMax(checkbox.value));
-            const index = prodFiltrados.indexOf(prodMarcaEliminar);
-            if (index > -1) {
-                prodFiltrados.splice(index, 1);
-            }
-            console.log(prodFiltrados);
-            prodFiltrados.forEach(precio => {
-                precio.forEach(prod => {
-                    const div = document.createElement('div');
-                    div.classList.add('producto');
-                    div.innerHTML=`
-                    <img class="producto_img" src="${prod.imagen}"></img>
-                    <h3 class="producto_nombre">${prod.marca} ${prod.modelo}</h3>
-                    <p class="producto_precio">$${prod.precio}</p>
-                    <button type="button" class="producto_btn">Añadir al carrito</button>`
-                    producto_container.appendChild(div);
-                });
-            });
-
-            if(prodFiltrados.length===0){
-                stock.forEach(item => {
-                    const div = document.createElement('div');
-                    div.classList.add('producto');
-                    div.innerHTML=`
-                    <img class="producto_img" src="${item.imagen}"></img>
-                    <h3 class="producto_nombre">${item.marca} ${item.modelo}</h3>
-                    <p class="producto_precio">$${item.precio}</p>
-                    <button type="button" class="producto_btn">Añadir al carrito</button>
-                `
-                    producto_container.appendChild(div);
-                });
-            }
-
+Array.from(itemFilter).forEach(item =>{
+    const input = item.querySelector('input'); //guardamos el input
+    input.addEventListener('change',() =>{
+        if(input.name === 'marca'){
+            filtrarMarca(input);
         }
-        
-        })
+        if (input.name === 'precio'){
+            filtrarPrecio();  
+        }
     });
-
-    function getPrecioMin(rango) {
-        switch (rango) {
-            case "30000-40000":
-            return 30000;
-            case "40000-50000":
-            return 40000;
-            case "50000-60000":
-            return 50000;
-        }
-    }
-
-    function getPrecioMax(rango) {
-        switch (rango) {
-            case "30000-40000":
-            return 40000;
-            case "40000-50000":
-            return 50000;
-            case "50000-60000":
-            return 60000;
-        }
-    }
 })
 
+const filtrarMarca =(input)=>{
+    //Si se el input fue seleccionado
+    if(input.checked){
+        value = input.value;
+        marcasSeleccionadas.push(input.value);
+        //Se vuelve a filtrar por marca
+        filtrarPrecio();  
+    }else{
+        //Si se deselecciono el input
+        const index = marcasSeleccionadas.indexOf(input.value);
+        if (index !== -1) {
+            marcasSeleccionadas.splice(index, 1); // Elimina la marca deseleccionada del array
+        }
+        //Se vuelve a filtrar por marca
+        filtrarPrecio();  
+    }
+}
 
+const filtrarPrecio = () =>{
+    stock.then(()=>{
+        const productos = producto_container.querySelectorAll('.producto'); //guardamos una Nodelist de todos los productos
+        const arrayProductos = Array.from(productos); // Convertimos la NodeList en un arreglo
 
-
-/*Crear 2 funciones una para cuando selecciona una marca, otra para el precio y hacer una clase css
-con la propiedad hidden para cuando filtro los productos activarla o desactivarla*/ 
-
-/* Crear una api local .json para los productos una para stock principal y otra para prod favoritos(home) */
+        arrayProductos.forEach(prod => { //Recorremos el arreglo de productos
+            const prodPrecio= prod.querySelector('p').textContent.substring(1); //guardamos el precio del producto
+            const precioMinValue = parseFloat(precioMin.value); //guardamos el precio minimo que se ingreso
+            const precioMaxValue = parseFloat(precioMax.value); //guardamos el precio maximo que se ingreso
+            const nombreProd= prod.querySelector('h3').textContent.split(' ')[0]; //guardamos el nombre del producto
+            
+            //SI NO SELECCIONO MARCA
+            if(marcasSeleccionadas.length===0) {
+                // Si el precio es menor que el valor minimo ingresado O si el precio es mayor que el valor maximo ingresado => SE OCULTA EL PRODUCTO
+                //De lo contrario se muestra
+                prodPrecio < precioMinValue || prodPrecio > precioMaxValue ? prod.classList.add('ocultar') : prod.classList.remove('ocultar');
+            }else{
+                //SI SELECCIONO ALGUNA MARCA
+                /* Si el precio es menor que el valor minimo ingresado O si el precio es mayor que el valor maximo ingresado 
+                 O si marcasSeleccionadas no incluye el nombre seleccionado => SE OCULTA EL PRODUCTO 
+                De lo contrario se muestra*/
+                if (prodPrecio < precioMinValue || prodPrecio > precioMaxValue || !marcasSeleccionadas.includes(nombreProd)) {
+                    prod.classList.add('ocultar');
+                } else {
+                    prod.classList.remove('ocultar');
+                }
+            }
+        });
+    });
+};

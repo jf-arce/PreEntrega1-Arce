@@ -20,4 +20,11 @@ window.addEventListener('scroll', () => {
   }
 });
 
+const hamburgerIcon = document.querySelector('#hamburger-icon');
+const containerNavMobile = document.querySelector('.container-nav-mobile');
+hamburgerIcon.addEventListener('click',()=>{
+  containerNavMobile.classList.toggle('active');
+  containerNavMobile.classList.toggle('animate__fadeInLeft');
+})
+
 

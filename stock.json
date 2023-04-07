@@ -5,21 +5,21 @@
     {"marca":"nike","modelo":"vapormax","precio":40000,"stock":6,"imagen":"../assets/images/vapor-max-flyknit.jpg"},
     {"marca":"nike","modelo":"uptempo","precio":45000,"stock":5,"imagen":"../assets/images/nike-uptempo.jpg"},
 
-    {"marca":"adidas","modelo":"galaxy","precio":35000,"stock":5,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
-    {"marca":"adidas","modelo":"superstar","precio":25000,"stock":6,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
-    {"marca":"adidas","modelo":"forum","precio":30000,"stock":4,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
-    {"marca":"adidas","modelo":"stansmith","precio":40000,"stock":8,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
+    {"marca":"adidas","modelo":"galaxy","precio":35000,"stock":5,"imagen":"../assets/images/adidas-galaxy.jpg"},
+    {"marca":"adidas","modelo":"superstar","precio":25000,"stock":6,"imagen":"../assets/images/adidas-superstar.jpg"},
+    {"marca":"adidas","modelo":"forum","precio":30000,"stock":4,"imagen":"../assets/images/adidas-forum.jpg"},
+    {"marca":"adidas","modelo":"stansmith","precio":40000,"stock":8,"imagen":"../assets/images/adidas-smith.jpg"},
 
-    {"marca":"vans","modelo":"oldskool","precio":35000,"stock":10,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
-    {"marca":"vans","modelo":"era","precio":30000,"stock":8,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
-    {"marca":"vans","modelo":"sk8high","precio":38000,"stock":6,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
+    {"marca":"vans","modelo":"oldskool","precio":35000,"stock":10,"imagen":"../assets/images/vans-oldskool.jpg"},
+    {"marca":"vans","modelo":"era","precio":30000,"stock":8,"imagen":"../assets/images/vans-era.jpg"},
+    {"marca":"vans","modelo":"sk8high","precio":38000,"stock":6,"imagen":"../assets/images/vans-high.jpg"},
 
-    {"marca":"converse","modelo":"allstar","precio":35000,"stock":10,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
-    {"marca":"converse","modelo":"courtlandt","precio":30000,"stock":8,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
-    {"marca":"converse","modelo":"chuck taylor all star","precio":38000,"stock":6,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
+    {"marca":"converse","modelo":"allstar","precio":35000,"stock":10,"imagen":"../assets/images/converse-allstar.jpg"},
+    {"marca":"converse","modelo":"courtlandt","precio":30000,"stock":8,"imagen":"../assets/images/converse-courtland.jpg"},
+    {"marca":"converse","modelo":"chuck taylor all star","precio":38000,"stock":6,"imagen":"../assets/images/converse-high.jpg"},
 
-    {"marca":"dc","modelo":"midway","precio":40000,"stock":8,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
-    {"marca":"dc","modelo":"manual sd","precio":38000,"stock":8,"imagen":"../assets/images/jordan-air-1-retro.jpg"},
-    {"marca":"dc","modelo":"kalisvulc","precio":35000,"stock":5,"imagen":"../assets/images/jordan-air-1-retro.jpg"}
+    {"marca":"dc","modelo":"midway","precio":40000,"stock":8,"imagen":"../assets/images/dc-kalis.jpg"},
+    {"marca":"dc","modelo":"manual sd","precio":38000,"stock":8,"imagen":"../assets/images/dc-manual.jpg"},
+    {"marca":"dc","modelo":"kalisvulc","precio":35000,"stock":5,"imagen":"../assets/images/dc-midway.jpg"}
 ]
 
